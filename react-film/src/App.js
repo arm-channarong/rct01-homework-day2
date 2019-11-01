@@ -1,20 +1,16 @@
-import React, { Component } from 'react';
-import TMDB from './TMDB';
-import FilmListing from './components/FilmListing';
-import FilmDetails from './components/FilmDetails';
+import React from 'react';
+import FilmListing from './FilmListing';
+import FilmDetails from './FilmDetails';
 import './App.css';
+import TMDB from './TMDB';
 
-const { films } = TMDB;
-
-class App extends Component {
-  render() {
-    return (
-      <div className="film-library">
-        <FilmListing films={films} />
-        <FilmDetails films={films} />
-      </div>
-    );
-  }
+const App = () => {
+  return (
+    <div className="film-library">
+      <FilmListing films={TMDB.films} />
+      <FilmDetails films={TMDB.films} />
+    </div>
+  );
 }
 
 export default App;
